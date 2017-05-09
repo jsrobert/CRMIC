@@ -1,9 +1,9 @@
 pipeline {
-  agent any
+  agent none
   stages {
-    stage('Extract CRM Solution') {
+    stage('Update SCM') {
       steps {
-        svn 'http://svn.libertyitsazure.com/svn/BTSSS/CRM/trunk/Solutions'
+        svn(url: 'http://svn.libertyitsazure.com/svn/BTSSS/CRM/trunk/Solutions', changelog: true, poll: true)
       }
     }
   }
