@@ -1,9 +1,12 @@
 pipeline {
   agent none
   stages {
-    stage('Update SCM') {
+    stage('Update CRM Solution from SCM') {
       steps {
-        svn(url: 'http://svn.libertyitsazure.com/svn/BTSSS/CRM/trunk/Solutions', changelog: true, poll: true)
+        node(label: 'Solution') {
+          writeFile(file: 'test-pipeline-file', text: 'This is the text')
+        }
+        
       }
     }
   }
