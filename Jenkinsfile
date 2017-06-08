@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('') {
       steps {
-        echo 'Updating code from SCM'
+        echo 'Prepare the Build Environment'
       }
     }
   }
