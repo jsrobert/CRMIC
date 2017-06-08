@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Update CRM Solution from SCM') {
+    stage('') {
       steps {
-        echo 'testing'
+        echo 'Updating code from SCM'
       }
     }
   }
