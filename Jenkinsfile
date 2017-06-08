@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('Prepare the Build Environment') {
       steps {
-        echo 'Prepare the Build Environment'
+        echo 'Preparing the build environment'
       }
     }
   }
