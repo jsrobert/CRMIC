@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('Prepare the Build Environment') {
       steps {
-        echo 'Preparing the build environment'
+        parallel(
+          "Prepare the Build Environment": {
+            echo 'Preparing the build environment'
+            
+          },
+          "Prepare DEV": {
+            powershell(script: 'ExtractBuild.ps1', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
+            
+          }
+        )
       }
     }
   }
